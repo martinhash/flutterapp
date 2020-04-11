@@ -27,13 +27,11 @@ List<Widget> _crearItems(){
       title: Text(opt),
     );
   
-  lista.add(tempWidget);
-
+  lista..add(tempWidget)
+       ..add( Divider() );
   }
-
   return lista;
-
-
 }
+
 
 }
