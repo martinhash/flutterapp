@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class AnimatedContainerPage extends StatefulWidget {
@@ -10,7 +12,7 @@ class _AnimatedContainerPage extends State<AnimatedContainerPage> {
   double _height = 50.0;
   Color _color = Colors.pink;
 
-  BorderRadiusGeometry _borderRadiusGeometry = BorderRadius.circular(8.0);
+  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8.0);
   
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,13 @@ class _AnimatedContainerPage extends State<AnimatedContainerPage> {
         ),
       ),
       body: Center(
-        child: Container(
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.bounceIn,
           width: _width,
           height: _height,
           decoration: BoxDecoration(
-            borderRadius: _borderRadiusGeometry,
+            borderRadius: _borderRadius,
             color: _color,
             ),
           ),
@@ -40,11 +44,19 @@ class _AnimatedContainerPage extends State<AnimatedContainerPage> {
   }
 
   _cambiarForma() {
+
+    final random = Random();
   
     setState(() {
-      _width += 50.0;
-      _height += 50.0;
-      _color = Colors.blue;
+      _width  =  random.nextInt(300).toDouble();
+      _height =  random.nextInt(300).toDouble();
+      _color  = Color.fromRGBO(
+        random.nextInt(255),
+        random.nextInt(255),
+        random.nextInt(255),
+        1
+      );
+      _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
     });
   }
 }
