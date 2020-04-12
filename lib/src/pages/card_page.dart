@@ -21,13 +21,14 @@ class CardPage extends StatelessWidget {
 Widget _cardTipo1() {
 
   return Card(
+    elevation: 5.0,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     child: Column(
       children: <Widget>[
         ListTile(
           leading: Icon(Icons.photo_album, color: Colors.blue,),
           title: Text('Soy el Titulo'),
           subtitle: Text('The latest tools that help you and your team build software better, together.The latest tools that help you and your team build software better, together.'),
-          
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -49,17 +50,15 @@ Widget _cardTipo1() {
 }
 
 Widget _cardTipo2(){
-  return Card(
-
+  final card = Container(
     child: Column(children: <Widget>[
       
       FadeInImage(
         image: NetworkImage('https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg'),
         placeholder: AssetImage('assets/original.gif'),
         fadeInDuration: Duration (milliseconds: 200),
-        height: 250,
+        height: 300,
         fit: BoxFit.cover,
-
       ),
       
        Container(
@@ -68,7 +67,26 @@ Widget _cardTipo2(){
          )
     ],
     ),
-
-
   );
+
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(20.0),
+      boxShadow:<BoxShadow> [
+        BoxShadow(
+          color: Colors.black26,
+          blurRadius: 10.0,
+          offset: Offset(2.0, 10.0),
+          spreadRadius: 2.0
+        )
+      ],
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: card,
+      ),
+    );
+
+
 }
