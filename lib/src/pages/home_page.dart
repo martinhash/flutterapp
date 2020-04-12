@@ -11,7 +11,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Componentes'),),
+      appBar: AppBar(
+        title: Text('Componentes'),
+        backgroundColor: Colors.purpleAccent,
+        ),
       body: _lista(),
     );
   }
@@ -40,7 +43,8 @@ class HomePage extends StatelessWidget {
       final widgetTemp = ListTile(
 
         title: Text(opt['texto']),
-        leading: getIcon( opt['icon'] ) ,
+        leading: (
+          getIcon( opt['icon'] )),
         trailing: Icon(Icons.keyboard_hide),
         onTap: (){
           
