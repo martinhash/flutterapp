@@ -17,7 +17,7 @@ class AlertPage extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           child: Text('Mostrar alerta'),
-          onPressed: () => _mostrarAlerta(context),
+          onPressed: () => _showAlert(context),
           color: Colors.blue,
           textColor: Colors.white,
           shape: StadiumBorder(),
@@ -25,15 +25,35 @@ class AlertPage extends StatelessWidget {
         ),
     );
   }
-  void _mostrarAlerta( BuildContext context){
+  void _showAlert( BuildContext context){
     showDialog(
       context: context,
       barrierDismissible: true,
       builder: (context){
+
         return AlertDialog(
-          title: Text('Okey'),
-          content: Text('Contenido'),
+          title: Text('Alerta mágica'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('Este es el contenido de la ventana emergente'),
+              FlutterLogo(
+                size: 100,
+              ),
+            ],
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: ()=>Navigator.of(context).pop(),
+              ),
+              FlatButton(
+                child: Text('Ok'),
+               onPressed: ()=>Navigator.of(context).pop(),
+              ),
+            ],
         );
+
       }
       );
   }
