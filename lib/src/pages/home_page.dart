@@ -46,13 +46,8 @@ class HomePage extends StatelessWidget {
         leading: getIcon( opt['icon'] ) ,
         trailing: Icon(Icons.keyboard_hide),
         onTap: (){
-         final route = MaterialPageRoute(
-            builder: (context){
-              return AlertPage();
-            }
-          );
-
-          Navigator.push(context, route);
+          
+          Navigator.pushNamed(context, opt['ruta']);
 
         },
       );
