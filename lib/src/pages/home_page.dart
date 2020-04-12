@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_app/src/providers/menu_provider.dart';
+
 import 'package:flutter_app/src/utils/iconos_string_util.dart';
+
+import 'package:flutter_app/src/pages/alert_page.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -23,14 +27,14 @@ class HomePage extends StatelessWidget {
         print(snapshot.data);
 
         return ListView(
-          children: _listaItems( snapshot.data ),
+          children: _listaItems( snapshot.data, context ),
         );
 
       }  ,
     );
   }
 
-  List<Widget> _listaItems( List<dynamic> data ) {
+  List<Widget> _listaItems( List<dynamic> data, context  ) {
     
 
     final List<Widget> opciones = [];
@@ -41,7 +45,16 @@ class HomePage extends StatelessWidget {
         title: Text(opt['texto']),
         leading: getIcon( opt['icon'] ) ,
         trailing: Icon(Icons.keyboard_hide),
-        onTap: (){},
+        onTap: (){
+         final route = MaterialPageRoute(
+            builder: (context){
+              return AlertPage();
+            }
+          );
+
+          Navigator.push(context, route);
+
+        },
       );
 
     opciones..add( widgetTemp )
