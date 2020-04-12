@@ -10,6 +10,8 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(10),
         children: <Widget>[
           _cardTipo1(),
+          SizedBox(height: 30.0,),
+          _cardTipo2()
         ],
       ),
     );
@@ -46,3 +48,27 @@ Widget _cardTipo1() {
 
 }
 
+Widget _cardTipo2(){
+  return Card(
+
+    child: Column(children: <Widget>[
+      
+      FadeInImage(
+        image: NetworkImage('https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg'),
+        placeholder: AssetImage('assets/original.gif'),
+        fadeInDuration: Duration (milliseconds: 200),
+        height: 250,
+        fit: BoxFit.cover,
+
+      ),
+      
+       Container(
+         child: Text('No se que poner'),
+         padding: EdgeInsets.all(10.0),
+         )
+    ],
+    ),
+
+
+  );
+}
