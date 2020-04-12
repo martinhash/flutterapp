@@ -18,6 +18,13 @@ class MyApp extends StatelessWidget {
       'alert'     : ( BuildContext context )=>AlertPage(),
       'avatar'     : ( BuildContext context )=>AvatarPage(),
       },
+      onGenerateRoute: ( RouteSettings settings ){
+
+        return MaterialPageRoute(
+          builder: ( BuildContext context)=> AlertPage()
+        );
+
+      },
     );
   }
 }
