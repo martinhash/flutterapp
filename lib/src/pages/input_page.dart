@@ -9,7 +9,9 @@ class _InputPageState extends State<InputPage> {
 
   String _nombre    = '';
   String _email     = '';
-  String _password  = '';
+  String _fecha     = '';
+
+  TextEditingController _inputFileDateController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,8 @@ class _InputPageState extends State<InputPage> {
           _crearPassword(),
           Divider(),
           _crearPersona(),
+          Divider(),
+          _crearFecha(context)
           ],
         ),
     );
@@ -55,7 +59,6 @@ class _InputPageState extends State<InputPage> {
 
   }
 
-
   Widget _crearEmail() {
     return TextField(
       keyboardType: TextInputType.emailAddress,
@@ -76,7 +79,6 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-
   Widget _crearPassword() {
      return TextField(
       obscureText: true,
@@ -89,14 +91,47 @@ class _InputPageState extends State<InputPage> {
         suffixIcon: Icon(Icons.security),
         icon: Icon(Icons.security)
       ),
-      onChanged: (valor){
-        setState(() {
-        _password = valor;
-        });
+      onChanged: (valor){},
+    );
+  }
+
+  Widget _crearFecha(BuildContext context) {
+     return TextField(
+      enableInteractiveSelection: false,
+      controller: _inputFileDateController,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Fecha de Nacimiento',
+        labelText: 'Fecha',
+        suffixIcon: Icon(Icons.date_range),
+        icon: Icon(Icons.date_range)
+      ),
+      onTap: (){
+
+        FocusScope.of(context).requestFocus(new FocusNode());
+        _selectDate(context);
       },
     );
   }
 
+  _selectDate(BuildContext context) async {
+    DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(2018),
+      lastDate: new DateTime(2025),
+      );
+
+      if(picked != null){
+        setState(() {
+          _fecha = picked.toString();
+          _inputFileDateController.text = _fecha;
+        });
+      }
+  }
+  
 
 
 
@@ -110,5 +145,6 @@ class _InputPageState extends State<InputPage> {
       );
       
   }
+
 
 }
