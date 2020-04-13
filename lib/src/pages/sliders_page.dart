@@ -8,7 +8,7 @@ class SliderPage extends StatefulWidget {
 class _SliderPageState extends State<SliderPage> {
 
   double _valorSlider = 350.0;
-
+  bool _bloquearSlider = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +16,11 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Sliders'),
       ),
       body: Container(
-        padding: EdgeInsets.only(top:100),
+        padding: EdgeInsets.only(top:50),
         child: Column(
           children: <Widget>[
             _crearSlider(),
+            _crearSwitch(),
             Expanded(child: _crearImagen()),
         ],
         ),
@@ -29,16 +30,18 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _crearSlider() {
     return Slider(
+      divisions: 20,
       activeColor: Colors.green,
       label: 'Tamaño de la imagen',
       value: _valorSlider,
       min: 10.0 ,
       max:  350.0,
-      onChanged: ( valor ){
+      onChanged: (_bloquearSlider) ? null : ( valor ){
         setState(() {
         _valorSlider = valor;
         });
       },
+      
     );
   }
 
@@ -48,6 +51,21 @@ class _SliderPageState extends State<SliderPage> {
       image: NetworkImage('https://img.wallpapersafari.com/tablet/768/1024/99/24/U9HyFn.jpg'),
       placeholder:AssetImage('assets/original.gif'),
     );
+  }
+
+  Widget _crearSwitch() {
+    
+    return SwitchListTile(
+      title: Text('Bloquear Slider'),
+      value: _bloquearSlider, 
+      onChanged: ( valor ){
+        setState(() {
+          _bloquearSlider = valor;
+        });
+      }
+      );
+
+
   }
 }
 
