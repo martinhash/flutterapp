@@ -7,7 +7,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
 
-  String _nombre = '';
+  String _nombre    = '';
+  String _email     = '';
+  String _password  = '';
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,10 @@ class _InputPageState extends State<InputPage> {
         padding: EdgeInsets.symmetric(horizontal:10.0, vertical:20.0),
         children: <Widget>[  
           _crearInput(),
+          Divider(),
+          _crearEmail(),
+          Divider(),
+          _crearPassword(),
           Divider(),
           _crearPersona(),
           ],
@@ -50,13 +56,59 @@ class _InputPageState extends State<InputPage> {
   }
 
 
+  Widget _crearEmail() {
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Email',
+        labelText: 'Email',
+        suffixIcon: Icon(Icons.alternate_email),
+        icon: Icon(Icons.email)
+      ),
+      onChanged: (valor){
+        setState(() {
+        _email = valor;
+        });
+      },
+    );
+  }
+
+
+  Widget _crearPassword() {
+     return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Password',
+        labelText: 'Password',
+        suffixIcon: Icon(Icons.security),
+        icon: Icon(Icons.security)
+      ),
+      onChanged: (valor){
+        setState(() {
+        _password = valor;
+        });
+      },
+    );
+  }
+
+
+
+
 
 
 
   Widget _crearPersona() {
     return ListTile(
-      title:Text('Nombre de: ${_nombre}'), 
+      title:Text('Cuenta de: ${_nombre}'), 
+      subtitle: Text('Email: ${_email}'),
       );
       
   }
+
 }
