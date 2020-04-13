@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+
+class SliderPage extends StatefulWidget {
+  @override
+  _SliderPageState createState() => _SliderPageState();
+}
+
+class _SliderPageState extends State<SliderPage> {
+
+  double _valorSlider = 350.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sliders'),
+      ),
+      body: Container(
+        padding: EdgeInsets.only(top:100),
+        child: Column(
+          children: <Widget>[
+            _crearSlider(),
+            Expanded(child: _crearImagen()),
+        ],
+        ),
+      ),
+    );
+  }
+
+  Widget _crearSlider() {
+    return Slider(
+      activeColor: Colors.green,
+      label: 'Tamaño de la imagen',
+      value: _valorSlider,
+      min: 10.0 ,
+      max:  350.0,
+      onChanged: ( valor ){
+        setState(() {
+        _valorSlider = valor;
+        });
+      },
+    );
+  }
+
+  Widget _crearImagen() {
+    return FadeInImage(
+      width: _valorSlider,
+      image: NetworkImage('https://img.wallpapersafari.com/tablet/768/1024/99/24/U9HyFn.jpg'),
+      placeholder:AssetImage('assets/original.gif'),
+    );
+  }
+}
+
