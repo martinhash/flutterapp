@@ -157,15 +157,25 @@ class _InputPageState extends State<InputPage> {
   }
 
   _crearDropDown() {
-    return DropdownButton(
-      value: _poderSeleccionado,
-      items: getOpcionesDropdown(),
-      onChanged: (opt){
-        setState(() {
-          _poderSeleccionado = opt;
-        });
-      },
+    return Row(
+  children: <Widget>[
+    Icon(Icons.select_all),
+    SizedBox(width: 30.0,),
+    Expanded(
+          child: DropdownButton(
+        value: _poderSeleccionado,
+        items: getOpcionesDropdown(),
+        onChanged: (opt){
+          setState(() {
+            _poderSeleccionado = opt;
+          });
+        },
+      ),
+    )
+    ],
     );
+    
+    
   }
 
 
@@ -177,6 +187,7 @@ class _InputPageState extends State<InputPage> {
     return ListTile(
       title:Text('Cuenta de: ${_nombre}'), 
       subtitle: Text('Email: ${_email}'),
+      trailing: Text(_poderSeleccionado),
       );
       
   }
