@@ -15,14 +15,14 @@ Map<String, WidgetBuilder> getAplicationRoutes(){
 
 
 return <String, WidgetBuilder>{
-      '/'      : ( BuildContext context )=>HomePage(),
-      'alert'  : ( BuildContext context )=>AlertPage(),
-      'avatar' : ( BuildContext context )=>AvatarPage(),
-      'card'   : ( BuildContext context )=>CardPage(),
+      '/'                   : ( BuildContext context )=>HomePage(),
+      'alert'               : ( BuildContext context )=>AlertPage(),
+      'avatar'              : ( BuildContext context )=>AvatarPage(),
+      'card'                : ( BuildContext context )=>CardPage(),
       'animatedContainer'   : ( BuildContext context )=>AnimatedContainerPage(),
-      'inputs'   : ( BuildContext context )=>InputPage(),
-      'sliders'   : ( BuildContext context )=>SliderPage(),
-      'lista'   : ( BuildContext context )=>ListaPage(),
+      'inputs'              : ( BuildContext context )=>InputPage(),
+      'sliders'             : ( BuildContext context )=>SliderPage(),
+      'list'                : ( BuildContext context )=>ListaPage(),
       };
 
 }
