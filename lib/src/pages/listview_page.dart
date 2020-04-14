@@ -19,7 +19,11 @@ class _ListaPageState extends State<ListaPage> {
     agregar10();
 
     _scrollController.addListener((){
-      print('scroll');
+      
+      if( _scrollController.position.pixels == _scrollController.position.maxScrollExtent ){
+        agregar10();
+      }
+
     });
 
   }
