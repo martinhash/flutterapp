@@ -88,6 +88,11 @@ class _ListaPageState extends State<ListaPage> {
   void respuestaHttp(){
     _isLoading = false;
     agregar10();
+    _scrollController.animateTo(
+      _scrollController.position.pixels + 100,
+      curve: Curves.fastOutSlowIn,
+      duration: Duration(milliseconds: 250)
+    );
   }
 
   _crearLoading() {
@@ -103,6 +108,7 @@ class _ListaPageState extends State<ListaPage> {
         ],
         mainAxisAlignment: MainAxisAlignment.center,
        ),
+       Padding(padding: EdgeInsets.all(10),)
       ],
       );
       
