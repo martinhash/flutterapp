@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 
@@ -12,20 +14,25 @@ class _ListaPageState extends State<ListaPage> {
 
   List<int> _listaNumeros= new List();
   int _ultimoItem = 0;
+  bool _isLoading = false;
+
 
   @override
   void initState() { 
     super.initState();
     agregar10();
-
     _scrollController.addListener((){
-      
       if( _scrollController.position.pixels == _scrollController.position.maxScrollExtent ){
-        agregar10();
+        fetchData();
       }
-
     });
+  }
 
+  //DESTRUIR LISTENER
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
   }
 
   @override
@@ -34,7 +41,12 @@ class _ListaPageState extends State<ListaPage> {
       appBar: AppBar( 
         title: Text('Lista Page'),
       ),
-      body: _crearLista(),
+      body: Stack(
+        children: <Widget>[
+      _crearLista(),
+      _crearLoading(),
+        ],
+      ) 
     );
   }
 
@@ -60,4 +72,44 @@ class _ListaPageState extends State<ListaPage> {
     setState(() {});
   }
 
+  Future fetchData() async{
+
+    _isLoading = true;
+    setState(() {});
+
+    final duration = new Duration(seconds: 2);
+
+    new Timer(
+      duration, 
+      respuestaHttp
+      );
+  }
+  
+  void respuestaHttp(){
+    _isLoading = false;
+    agregar10();
+  }
+
+  _crearLoading() {
+
+    if(_isLoading){
+      return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment:MainAxisAlignment.end,
+      children: <Widget>[
+       Row(
+        children: <Widget>[
+          CircularProgressIndicator()
+        ],
+        mainAxisAlignment: MainAxisAlignment.center,
+       ),
+      ],
+      );
+      
+    }else{
+      return Container();
+    }
+
+
+  }
 }
