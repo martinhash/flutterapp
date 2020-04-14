@@ -8,9 +8,21 @@ class ListaPage extends StatefulWidget {
 
 class _ListaPageState extends State<ListaPage> {
 
+  ScrollController _scrollController = new ScrollController();
 
-  List<int> _listaNumeros = [1,2,3,4,5];
+  List<int> _listaNumeros= new List();
+  int _ultimoItem = 0;
 
+  @override
+  void initState() { 
+    super.initState();
+    agregar10();
+
+    _scrollController.addListener((){
+      print('scroll');
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,19 +36,24 @@ class _ListaPageState extends State<ListaPage> {
 
   Widget _crearLista(){
     return ListView.builder(
-      itemBuilder: (BuildContext context, int index){
-        
-        final imagen = _listaNumeros[index];
-        
-        return FadeInImage(
-          image: NetworkImage('https://picsum.photos/500/300/?image=$imagen'),
-          placeholder: AssetImage('assets/original.gif'),
-        );
-      },
       itemCount: _listaNumeros.length,
+      controller: _scrollController,
+      itemBuilder: (BuildContext context, int index){
+      final imagen = _listaNumeros[index];
+      return FadeInImage(
+        image: NetworkImage('https://picsum.photos/500/300/?image=$imagen'),
+        placeholder: AssetImage('assets/original.gif'),
+      );
+      },
       );
   }
 
-
+  void agregar10(){
+    for (var i = 0; i < 10; i++) {
+      _ultimoItem++;
+      _listaNumeros.add(_ultimoItem);
+    }
+    setState(() {});
+  }
 
 }
