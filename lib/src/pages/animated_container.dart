@@ -33,8 +33,7 @@ class _AnimatedContainerPage extends State<AnimatedContainerPage> {
       ),
       body: Center(
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.bounceIn,
+          duration: Duration(milliseconds: 200),
           width: _width,
           height: _height,
           decoration: BoxDecoration(

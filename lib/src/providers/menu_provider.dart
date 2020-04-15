@@ -6,11 +6,7 @@ class _MenuProvider {
 
   List<dynamic> opciones = [];
 
-  _MenuProvider(){
-
-
-
-  }
+  _MenuProvider(){}
 
   Future<List<dynamic>> cargarData() async {
 

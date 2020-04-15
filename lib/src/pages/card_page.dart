@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 class CardPage extends StatelessWidget {
 
-  static final pageName = 'cards';
-
   
   @override
   Widget build(BuildContext context) {
@@ -31,14 +29,14 @@ Widget _cardTipo1() {
       children: <Widget>[
         ListTile(
           leading: Icon(Icons.photo_album, color: Colors.blue,),
-          title: Text('Soy el Titulo'),
+          title: Text('Title Card'),
           subtitle: Text('The latest tools that help you and your team build software better, together.The latest tools that help you and your team build software better, together.'),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             FlatButton(
-              child: Text('Cancelar'),
+              child: Text('Cancel'),
               onPressed: (){},
             ),
             FlatButton(
@@ -62,11 +60,11 @@ Widget _cardTipo2(){
         placeholder: AssetImage('assets/original.gif'),
         fadeInDuration: Duration (milliseconds: 200),
         height: 300,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
       
        Container(
-         child: Text('No se que poner'),
+         child: Text('Description of this image'),
          padding: EdgeInsets.all(10.0),
          )
     ],
@@ -76,18 +74,13 @@ Widget _cardTipo2(){
   return Container(
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
       boxShadow:<BoxShadow> [
         BoxShadow(
           color: Colors.black26,
-          blurRadius: 10.0,
-          offset: Offset(2.0, 10.0),
-          spreadRadius: 2.0
         )
       ],
     ),
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
+    child: Container(
       child: card,
       ),
     );
