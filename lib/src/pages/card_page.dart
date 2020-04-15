@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class CardPage extends StatelessWidget {
+
+  static final pageName = 'cards';
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

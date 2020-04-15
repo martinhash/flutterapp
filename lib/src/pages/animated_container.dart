@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedContainerPage extends StatefulWidget {
+
+  static final pageName = 'animatedContainer';
+
   @override
   _AnimatedContainerPage createState() => _AnimatedContainerPage();
 }

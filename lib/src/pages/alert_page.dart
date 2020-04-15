@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class AlertPage extends StatelessWidget {
+
+  static final pageName = 'alert';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

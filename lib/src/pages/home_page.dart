@@ -4,10 +4,12 @@ import 'package:flutter_app/src/providers/menu_provider.dart';
 
 import 'package:flutter_app/src/utils/iconos_string_util.dart';
 
-import 'package:flutter_app/src/pages/alert_page.dart';
-
 
 class HomePage extends StatelessWidget {
+
+  static final pageName = 'home';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

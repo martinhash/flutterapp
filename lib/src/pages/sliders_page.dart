@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SliderPage extends StatefulWidget {
+
+  static final pageName = 'sliders';
+
   @override
   _SliderPageState createState() => _SliderPageState();
 }
