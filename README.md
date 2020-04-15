@@ -2,7 +2,7 @@
 
 ## Getting Started :fire: :fire:
 
-This is my personal projects who contains a differents types of Components of the Amazing Flutter with my best practices!!
+This is my personal simple project who contains a differents types of Components of Flutter with my best practices!!
 
 - [x] Components
 - [x] Routing (same URLs)
