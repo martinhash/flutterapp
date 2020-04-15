@@ -6,7 +6,7 @@ This is my personal projects who contains a differents types of Components of th
 
 - [x] Components
 - [x] Routing (same URLs)
-- [x] JSON file with images
+- [x] JSON file with dynamic Routes
 - [x] Assets (brands, preview and detail images)
 - [x] No frameworks
 - [x] Animated Container
@@ -14,7 +14,8 @@ This is my personal projects who contains a differents types of Components of th
 - [x] Cards
 - [x] ListViews
 - [x] Dynamic Size of Image 
-
+- [x] Icons 
+- [x] Icons 
 
 
 
