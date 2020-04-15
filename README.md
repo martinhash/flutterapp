@@ -1,16 +1,27 @@
-# flutter_app
+# :large_blue_circle: Some Components of Flutter!!! :large_blue_circle:
 
-A new Flutter project.
+## Getting Started :fire: :fire:
 
-## Getting Started
+This is my personal projects who contains a differents types of Components of the Amazing Flutter with my best practices!!
 
-This project is a starting point for a Flutter application.
+- [x] Components
+- [x] Routing (same URLs)
+- [x] JSON file with images
+- [x] Assets (brands, preview and detail images)
+- [x] No frameworks
+- [x] Animated Container
+- [x] Alerts
+- [x] Cards
+- [x] ListViews
+- [x] Dynamic Size of Image 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+
+## Authors
+
+* **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+samples, guidance on mobile development, and a fulal API reference.
