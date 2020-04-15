@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Componentes'),
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.blue,
         ),
       body: _lista(),
     );

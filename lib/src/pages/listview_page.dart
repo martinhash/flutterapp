@@ -68,10 +68,10 @@ class _ListaPageState extends State<ListaPage> {
   }
 
   Future<Null> obtenerPagina1() async {
-    
+
     final duration  = new Duration( seconds: 2 );
 
-    new Timer(duration, (){
+    new Timer(duration, (){ 
       _listaNumeros.clear();
       _ultimoItem++;
       agregar10();
