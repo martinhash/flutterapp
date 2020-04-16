@@ -21,7 +21,7 @@ return <String, WidgetBuilder>{
       CardPage.pageName               : ( BuildContext context )=>CardPage(),
       AnimatedContainerPage.pageName  : ( BuildContext context )=>AnimatedContainerPage(),
       InputPage.pageName              : ( BuildContext context )=>InputPage(),
-      'sliders'             : ( BuildContext context )=>SliderPage(),
+      SliderPage.pageName             : ( BuildContext context )=>SliderPage(),
       'list'                : ( BuildContext context )=>ListaPage(),
       };
 
