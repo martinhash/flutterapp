@@ -20,7 +20,7 @@ return <String, WidgetBuilder>{
       AvatarPage.pageName             : ( BuildContext context )=>AvatarPage(),
       CardPage.pageName               : ( BuildContext context )=>CardPage(),
       AnimatedContainerPage.pageName  : ( BuildContext context )=>AnimatedContainerPage(),
-      'inputs'              : ( BuildContext context )=>InputPage(),
+      InputPage.pageName              : ( BuildContext context )=>InputPage(),
       'sliders'             : ( BuildContext context )=>SliderPage(),
       'list'                : ( BuildContext context )=>ListaPage(),
       };
