@@ -7,6 +7,7 @@ import 'package:flutter_app/src/utils/iconos_string_util.dart';
 
 class HomePage extends StatelessWidget {
 
+  static final pageName = '/';
 
 
   @override
