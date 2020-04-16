@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class ListaPage extends StatefulWidget {
 
+  static final pageName = "list";
   
   @override
   _ListaPageState createState() => _ListaPageState();

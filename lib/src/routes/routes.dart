@@ -22,7 +22,7 @@ return <String, WidgetBuilder>{
       AnimatedContainerPage.pageName  : ( BuildContext context )=>AnimatedContainerPage(),
       InputPage.pageName              : ( BuildContext context )=>InputPage(),
       SliderPage.pageName             : ( BuildContext context )=>SliderPage(),
-      'list'                : ( BuildContext context )=>ListaPage(),
+      ListaPage.pageName              : ( BuildContext context )=>ListaPage(),
       };
 
 }
