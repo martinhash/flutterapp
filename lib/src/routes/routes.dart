@@ -16,7 +16,7 @@ Map<String, WidgetBuilder> getAplicationRoutes(){
 
 return <String, WidgetBuilder>{
       HomePage.pageName     : ( BuildContext context )=>HomePage(),
-      'alert'               : ( BuildContext context )=>AlertPage(),
+      AlertPage.pageName    : ( BuildContext context )=>AlertPage(),
       'avatar'              : ( BuildContext context )=>AvatarPage(),
       'card'                : ( BuildContext context )=>CardPage(),
       'animatedContainer'   : ( BuildContext context )=>AnimatedContainerPage(),
