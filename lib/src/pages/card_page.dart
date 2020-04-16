@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 class CardPage extends StatelessWidget {
 
+  static final pageName = "card";
+
   
   @override
   Widget build(BuildContext context) {
