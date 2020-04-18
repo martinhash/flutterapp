@@ -21,6 +21,9 @@ This is my personal simple project who contains a differents types of Components
 
 ## Authors
 
+
+## Getting starter
+
 * **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
 
 For help getting started with Flutter, view our
