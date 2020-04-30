@@ -17,12 +17,17 @@ This is my personal simple project who contains a differents types of Components
 - [x] Icons 
 - [x] Icons 
 
+## Getting started (Visual Studio)
 
+**Open Command Pallet**
+
+```sh
+    Flutter: Get Packages
+```
+in Run section, select **Start Debugging** and select your device.
 
 ## Authors
 
-
-## Getting starter
 
 * **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
 
