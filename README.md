@@ -24,7 +24,7 @@ This is my personal simple project who contains a differents types of Components
 ```sh
     Flutter: Get Packages
 ```
-in Run section, select **Start Debugging** and select your device.
+in Run section, select **Start Debugging** (f5) and select your device.
 
 ## Authors
 
